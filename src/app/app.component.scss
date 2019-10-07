@@ -1,0 +1,85 @@
+//TOP MENU
+.mat-sidenav{
+    height: 100%;
+    width: 300px;
+    padding-top: 51px;
+    background-color:#0e2340;
+  }
+  
+    //LINKS
+    a:hover{
+        background-color:white;
+        color:  #0e2340  !important;
+        }
+        .nav-link{
+            color: white;
+            display: block;
+            padding: .5rem 1rem;
+        }
+        .active, .active:hover{
+            color: white;
+            background-color:  #EE7623 !important;
+        }
+    a{
+        cursor: pointer;
+        color: white !important;
+    }
+
+//TOP TOOLBAR
+
+.mat-drawer-container{
+    overflow: visible;
+}
+
+.mat-drawer-backdrop{
+    height: calc(100vh);
+    position: fixed;
+}
+
+.menu-toggle{
+    padding: 0;
+    margin-left: auto;
+    min-width: 55px;
+    border-radius: 3px;
+    background-color: #EE7623;
+    color: white;
+    i{
+      font-size: 28px;
+    }
+}
+.top-toolbar{
+    background-color: #0e2340;
+    height: 50px;
+    width: 100% !important;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    border-bottom: 3px solid #EE7623;
+}
+
+
+
+mat-sidenav-content{
+  overflow: visible !important;
+}
+
+mat-sidenav-container{
+    flex: 1;
+}
+
+// Container
+
+.content-container{
+    width: 100%;
+    padding-top: 50px;
+}
+
+.sidenav-content{
+    overflow: visible;
+  }
+
+  .headerLogo{
+      
+    height: 50px;
+    margin-left: 30px;
+    }

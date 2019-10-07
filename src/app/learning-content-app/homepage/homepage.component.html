@@ -1,0 +1,26 @@
+
+
+<!-- Hero image with login buttons -->
+<div class="hero">
+  <div class="buttonArea d-flex flex-column align-items-center justify-content-center">
+    <h1 class="text-light heroTitle text-center">A learning content platform built by coding students for coding students</h1>
+    <div *ngIf="(user$ | async)">
+       <a href='/login' class="btn btn-light btn-lg m-3">Login</a>
+      <a href='/registration' class="btn btn-light btn-lg m-3">Register</a>
+    </div>
+  </div>
+</div>
+
+<!-- product description -->
+<div class="productPreview flex-wrap d-flex flex-row align-items-center justify-content-center p-5">
+  <div>
+    <h3 class="orange">Collaborating has never been easier</h3>
+    <ul>
+      <li>Share files and videos with classmates</li>
+      <li>Comment on content and add your own notes</li>
+      <li>Find learning content by topics</li>
+      <li>Available exclusively for Midland University students</li>
+    </ul>
+  </div>
+</div>
+

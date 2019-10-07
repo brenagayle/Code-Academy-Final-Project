@@ -1,0 +1,19 @@
+<h1>{{quiz.title}}</h1>
+
+<mat-card *ngFor="let question of quiz.questions">
+    <mat-card-title>
+        {{question.prompt}}
+    </mat-card-title>
+    <mat-card-subtitle *ngIf="question.answered == question.correct" style="background-color:green">
+        {{question.choices[question.correct]}}
+        <mat-card-content >You're answer is correct</mat-card-content>
+
+    </mat-card-subtitle>
+    <mat-card-subtitle *ngIf="question.answered != question.correct" style="background-color:green">
+        {{question.choices[question.correct]}}
+    </mat-card-subtitle>
+    <mat-card-subtitle *ngIf="question.answered != question.correct" style="background-color:red">
+        {{question.choices[question.answered]}}
+    </mat-card-subtitle>
+
+</mat-card> 

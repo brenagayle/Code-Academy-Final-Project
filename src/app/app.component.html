@@ -1,0 +1,80 @@
+<mat-toolbar color="primary" class="top-toolbar">
+    <img class="headerLogo" src="./assets/images/quizWhipSemiBold300.png" alt="" *ngIf="currentLink == 'quiz'">
+    <img class="headerLogo" src="./assets/images/braintrain2.png" alt="" *ngIf="currentLink == 'learning'">
+    <button class="menu-toggle" mat-flat-button color="accent" (click)="sidenav.toggle()">
+    <i class="material-icons pointer"  color="primary">menu</i>
+    </button>  
+  </mat-toolbar>
+  <mat-sidenav-container class="menu-container main-content">
+    <mat-sidenav class="sidenav-menu" #sidenav mode="over" [(opened)]="opened" [fixedInViewport]="true">
+      <mat-nav-list>
+
+        <!-- On Learning App Routes -->
+          <ng-container *ngIf="(user$ | async).permission && currentLink == 'learning'">
+        <a (click)="sidenav.toggle()" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+          class="nav-link  text-center" [routerLink]="['/learning/homepage']">Home</a>
+        <a (click)="sidenav.toggle()" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+          class="nav-link  text-center" [routerLink]="['/learning/content']">Learning Content</a>
+          <a  (click)="sidenav.toggle()" routerLinkActive="active" [routerLinkActiveOptions]="{exact:false}"
+          class="nav-link text-center" [routerLink]="[ '/learning/uploader' ]" 
+          *ngIf="(user$ | async).permission === 'admin' || (user$ | async).permission === 'teacher'">Upload</a>
+          <a (click)="sidenav.toggle()" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+          class="nav-link  text-center" [routerLink]="[ '/quiz/dashboard' ]">To Quizwhip</a>
+        </ng-container>
+
+        <!-- On Quiz Routes -->
+        <ng-container *ngIf="(user$ | async).permission && currentLink == 'quiz'">
+          <a (click)="sidenav.toggle()" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+          class="nav-link  text-center" [routerLink]="[ '/quiz/dashboard' ]">Dashboard</a>
+          <a (click)="sidenav.toggle()" *ngIf="(user$ | async).permission" (click)="takeQuiz()"
+          class="nav-link  text-center" >Take Quiz</a>
+          <a (click)="sidenav.toggle()" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+          class="nav-link  text-center" [routerLink]="['/quiz/quiz-form']"
+          *ngIf="(user$ | async).permission === 'admin' || (user$ | async).permission === 'teacher'"
+          >Create Quiz</a>
+          <a (click)="sidenav.toggle()" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+          class="nav-link  text-center" [routerLink]="[ '/learning/content' ]">To Learning Content</a>
+        </ng-container>
+
+        <ng-container *ngIf="(user$ | async).permission && currentLink !== 'quiz' && currentLink !== 'learning'">
+                <a (click)="sidenav.toggle()" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+                class="nav-link  text-center" [routerLink]="[ '/quiz/dashboard' ]">To Quizwhip</a>
+                <a (click)="sidenav.toggle()" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+                class="nav-link  text-center" [routerLink]="[ '/learning/content' ]">To Learning Content</a>
+              </ng-container>
+
+
+          
+        
+
+
+        <!-- Admin Route -->
+        <a  (click)="sidenav.toggle()" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+          class="nav-link text-center" [routerLink]="[ '/admin' ]" *ngIf="(user$ | async).permission === 'admin'">Admin</a>
+
+        <!-- Not logged in routes -->
+        <ng-container *ngIf="(user$ | async).permission == undefined">
+
+          <a (click)="sidenav.toggle()" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+          class="nav-link  text-center" [routerLink]="['/login']">Login</a>
+          <a (click)="sidenav.toggle()" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+          class="nav-link  text-center" [routerLink]="['/register']">Register</a>
+          <a (click)="sidenav.toggle()" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+          class="nav-link  text-center" [routerLink]="['/learning/content']">To Learning Content</a>
+        </ng-container>
+
+          <a (click)="sidenav.toggle()" routerLink *ngIf="(user$ | async).permission" (click)="signOut()"
+          class="nav-link  text-center">Sign Out</a>
+          
+          
+
+
+      </mat-nav-list>
+    </mat-sidenav>
+  
+    <mat-sidenav-content class="sidenav-content">
+        <div class="content-container">
+        <router-outlet></router-outlet>
+    </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

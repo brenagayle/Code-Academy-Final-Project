@@ -1,0 +1,29 @@
+<form #questionForm="ngForm" class="background full-page">
+  <div class="flex">
+
+      <h1 class="center">{{quiz?.title}}</h1>
+      <h5 class="center">description: {{quiz?.description}}</h5>
+    <div class="questionContainer" *ngFor="let question of quiz?.questions; let j = index; trackBy:trackByFn">
+      <mat-card *ngIf="!completed">
+        <mat-card-subtitle>{{question.title}}</mat-card-subtitle>
+        <mat-radio-group aria-label="Select an option">
+          <ol class="answer" *ngFor="let answer of question.answers; let i = index; trackBy:trackByFn">
+            <mat-radio-button [value]="i" (change)="onSelectionChange(j, i)"> </mat-radio-button>
+            {{answer}}
+          </ol>
+        </mat-radio-group>
+      </mat-card>
+    </div>
+
+    <button mat-raised-button color="accent" (click)="submitButton()" id="submitButton" mat-button>Submit</button>
+
+    <div id="thankYou" class="resultContainer">
+      <mat-card-subtitle> Thank you for taking the quiz!</mat-card-subtitle>
+      You answered {{numberCorrect}} of {{quiz?.questions.length}} questions correctly for a score of {{percent}}%!
+      <br>
+      <button (click)="takeQuiz()" class="btnMargin" mat-raised-button color="primary">Take another
+          quiz!</button>
+    </div>
+
+  </div>
+</form>

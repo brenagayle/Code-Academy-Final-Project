@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600&display=swap');
+
+.background {
+  background-image: linear-gradient(#0e2340,  #EE7623);
+  height: 100vh;
+  background-size: cover;
+}
+
+.center{
+  text-align: center;
+  color: white;
+  margin-top: 0;
+}
+
+#submitButton {
+  background-color: #0e2340;
+  margin-top: 10px;
+  margin-left: 70%;
+}
+
+.questionContainer, .resultContainer{
+  margin: 0 auto;
+  width: 60%;
+}
+
+.resultContainer {
+  background-color: white;
+  padding: 30px;
+}
+
+#searchsubmit {    
+    visibility: hidden;
+}
+
+#thankYou {    
+    visibility: hidden;
+}
+
+#visible {
+  visibility: visible;
+}
+
+#visible2 {
+  visibility: visible;
+}
+
+#hidden {
+  visibility: hidden;
+}
+
+#visible3 {
+  visibility: visible;
+}
+
+#hidden2{
+  visibility:  hidden;
+}
+
+
+@media (max-width: 768px) {
+  .questionContainer, .resultContainer {
+    width: 90%;
+  }
+}

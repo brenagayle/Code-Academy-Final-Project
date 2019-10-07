@@ -1,0 +1,101 @@
+.background {
+  background-image: linear-gradient( #0e2340,  #EE7623);
+  display: flex;
+  flex-flow: row wrap;
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+mat-form-field{
+  margin-bottom: 10px;
+}
+
+mat-card{
+  min-width: 330px;
+  padding: 30px;
+  margin-bottom: 10%;
+  // margin: 0 auto;
+  background-color: rgb(255,255,255,0.95);
+  box-shadow: none !important;
+}
+
+.transparent {
+  background-color: rgba(0,0,0,0);
+  color: white;
+}
+
+.center {
+  margin: auto;
+  text-align: center;
+  padding-bottom: 30px;
+
+}
+
+.redtext{
+  color: red;
+}
+.arrow {
+  margin-left: 10px;
+}
+
+.subtitle {
+  text-align: center;
+}
+
+.form {
+  width: 100%;
+}
+
+.button {
+  margin: 1em;
+}
+
+.left {
+  grid-column-start: 1;
+  margin: auto;
+}
+
+.center-img {
+  grid-column-start: 2;
+  margin: auto;
+}
+
+.right {
+  grid-column-start: 3;
+  margin: auto;
+}
+
+.padding {
+  margin: 20px;
+}
+
+mat-form-field {
+  width: 95%;
+}
+
+@media (max-width: 880px) {
+  .background {
+    flex-flow: column wrap;
+  }
+
+  .right-card, .right {
+    width: 100vw;
+  }
+
+  .center-img {
+    visibility: hidden;
+  }
+
+  mat-card {
+    margin-bottom: 0;
+  }
+
+  mat-form-field {
+    width: 60%;
+  }
+
+
+}

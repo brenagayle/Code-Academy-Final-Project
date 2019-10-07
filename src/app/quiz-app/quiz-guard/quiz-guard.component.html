@@ -1,0 +1,27 @@
+<form>
+    <mat-card class="matCard">
+  <mat-card-header class="center">
+     
+    <mat-card-title class="fontSize">Welcome!</mat-card-title>
+  
+      <mat-card-subtitle>Please Enter Your Quiz Code</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content class="center">
+
+    <div>
+      <mat-form-field>
+        <mat-label>Quiz Code</mat-label>
+        <input matInput type="text" [(ngModel)]="token" name="token">
+        <mat-hint *ngIf="errorMessage" class="error">We didn't recognize this quizcode, please try again.</mat-hint>
+      </mat-form-field>
+    </div>
+  </mat-card-content>
+
+  <mat-card-actions class="centerAlign">
+    <button color="primary" mat-raised-button type="submit" (click)="accessQuiz(token)" name="submit">Submit</button>
+  </mat-card-actions>
+
+  </mat-card>
+  <!-- <div>{{error}}</div> -->
+
+</form>

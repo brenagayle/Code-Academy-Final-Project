@@ -1,0 +1,106 @@
+.background {
+  background-image: linear-gradient( #0e2340,  #EE7623);
+  height: 100%;
+}
+.paddingLeft {
+  padding-left: 24px;
+}
+
+.welcome {
+  text-align: center;
+  color: white;
+  font-size: 3em;
+}
+
+.accordionText {
+  color: black;
+}
+
+.welcomeContainer {
+  padding: 4em;
+}
+
+.contentTable {
+  width: 100%;
+  align-content: center;
+
+}
+
+.contentPreview {
+  max-height: 50px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+}
+
+.darkBlue {
+  background-color: #0e2340;
+}
+
+.row{
+  min-height: 75px;
+}
+
+.bgImg {
+  height: 400px;
+  overflow: hidden;
+  background-color: #0e2340;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://firebasestorage.googleapis.com/v0/b/midland-techwarriors.appspot.com/o/MUCodeAcademy-6765.jpg?alt=media&token=84847cdf-5c98-4bd9-85a6-38521205c8bd');
+  background-size: cover;
+  background-position: center;
+}
+
+.tableHeading {
+  color: #0e2340;
+}
+
+.filter-by-age {
+  color: #6c757d;
+
+  .title {
+    align-self: center;
+  }
+
+  .age-slider {
+    width: 85%;
+  }
+}
+
+.files-list {
+  padding: 40px 60px;
+
+  .image-col {
+    text-align: center;
+
+    .image {
+      border-radius: 10%;
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  .text-col {
+    margin: auto 0px;
+  }
+
+  .actions-col {
+    text-align: center;
+    margin: auto 0px;
+
+    .action {
+      line-height: 1;
+    }
+
+    .icon {
+      font-size: 20px;
+    }
+  }
+}
+.tableHeading{
+    color: #0e2340;
+}
+.test{
+    text-align: center;
+    color: white;
+    padding: 10px;
+}

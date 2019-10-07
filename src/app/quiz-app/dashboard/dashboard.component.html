@@ -1,0 +1,85 @@
+<div class="background full-page">
+  <div class="span"></div>
+  <mat-card class="matCard" >
+    <mat-card-header class="center">
+      <mat-card-title class="fontSize">Taken Quizzes</mat-card-title>
+    </mat-card-header>
+    
+    <mat-form-field>
+      <input matInput (keyup)="applyQuizzesFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+    
+    <table class = "mat-elevation-z8" mat-table [dataSource]="takenQuizzesData" matSort>
+      
+      <!-- The let user is just a variable for the data pulled from the datasource (could be let anything.displayname and work) -->
+     
+      <ng-container matColumnDef="score">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Score </th>
+        <td mat-cell *matCellDef="let quiz"> {{quiz.score}}% </td>
+      </ng-container>
+     
+      <ng-container matColumnDef="instructor">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Instructor </th>
+        <td mat-cell *matCellDef="let quiz"> {{quiz.creator}} </td>
+      </ng-container>
+     
+      <ng-container matColumnDef="quizTitle">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Quiz </th>
+        <td mat-cell *matCellDef="let quiz"> {{quiz.title}} </td>
+      </ng-container>
+      <ng-container matColumnDef="quizId">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Quiz ID </th>
+        <td mat-cell *matCellDef="let quiz"> {{quiz.quizId}} </td>
+      </ng-container>
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+        <td mat-cell *matCellDef="let quiz"> {{quiz.date | formatDate}} </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="quizsTakenColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: quizsTakenColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[10, 25, 50]" showFirstLastButtons></mat-paginator>
+  </mat-card>
+  
+  <div class="span"></div>
+  <mat-card class="matCard" *ngIf="(user$ | async).permission === 'admin' || (user$ | async) === 'teacher'">
+      <mat-card-header class="center">
+        <mat-card-title class="fontSize">Created Quizzes</mat-card-title>
+      </mat-card-header>
+      
+      <mat-form-field>
+        <input matInput (keyup)="applyTeacherFilter($event.target.value)" placeholder="Filter">
+      </mat-form-field>
+      
+      <table class = "mat-elevation-z8" mat-table [dataSource]="teacherQuizzesData" matSort>
+        
+        <!-- The let user is just a variable for the data pulled from the datasource (could be let anything.displayname and work) -->
+       
+        <ng-container matColumnDef="score">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Score </th>
+          <td mat-cell *matCellDef="let created"> {{created.score}}% </td>
+        </ng-container>
+       
+        <ng-container matColumnDef="student">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Student </th>
+          <td mat-cell *matCellDef="let created"> {{created.username}} </td>
+        </ng-container>
+       
+        <ng-container matColumnDef="quizTitle">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Quiz Title </th>
+          <td mat-cell *matCellDef="let created"> {{created.title}} </td>
+        </ng-container>
+        <ng-container matColumnDef="quizId">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Quiz ID </th>
+          <td mat-cell *matCellDef="let created"> {{created.quizId}} </td>
+        </ng-container>
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+          <td mat-cell *matCellDef="let created"> {{created.date | formatDate}} </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="quizsCreatedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: quizsCreatedColumns;"></tr>
+      </table>
+      <mat-paginator [pageSizeOptions]="[10, 25, 50]" showFirstLastButtons></mat-paginator>
+    </mat-card>
+</div>

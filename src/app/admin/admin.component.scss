@@ -1,0 +1,43 @@
+.background {
+  background-image: linear-gradient(#0e2340, #ee7623);
+}
+
+.full-page {
+  height: 100vh;
+}
+
+table {
+  width: 100%;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #0e2340;
+}
+
+.tableHeader {
+  font-size: 20px;
+  text-align: center;
+}
+
+.center {
+  margin: auto;
+  justify-content: center;
+}
+
+.fontSize {
+  font-size: 24px;
+}
+
+* {
+  text-align: center;
+}
+
+.matCard {
+  margin: auto;
+  width: 60%;
+  padding-top: 10px;
+  margin-top: 0px;
+}
+:host ::ng-deep .mat-sort-header-container {
+  display: flex;
+  justify-content: center;
+}

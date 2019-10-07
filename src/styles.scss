@@ -1,0 +1,92 @@
+// @import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import '~@angular/material/theming';
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@include mat-core();
+
+// $white: #ffffff;
+// $black: #000000;
+// $gray: #e6e7e8;
+$mlblue: (
+    50: #E2E5E8,
+    100: #B7BDC6,
+    200: #8791A0,
+    300: #566579,
+    400: #32445D,
+    500: #0E2340,
+    600: #0C1F3A,
+    700: #0A1A32,
+    800: #08152A,
+    900: #040C1C,
+    A100: #5A83FF,
+    A200: #275DFF,
+    A400: #003DF3,
+    A700: #0036DA,
+    contrast: (
+        50: $black-87-opacity,
+        100: $black-87-opacity,
+        200: $black-87-opacity,
+        300: $black-87-opacity,
+        400: $black-87-opacity,
+        500: white,
+        600: white,
+        700: white,
+        800: white,
+        900: white,
+        A100: $black-87-opacity,
+        A200: $black-87-opacity,
+        A400: $black-87-opacity,
+        A700: white,
+        //NOTE: Need to change contrast colors
+        //This is where I got the stuff from:
+        //https://stackoverflow.com/questions/41440998/how-can-i-use-custom-theme-palettes-in-angular
+    )
+);
+$mlorange: (
+    50: #FDEFE5,
+    100: #FAD6BD,
+    200: #F7BB91,
+    300: #F39F65,
+    400: #F18B44,
+    500: #EE7623,
+    600: #EC6E1F,
+    700: #E9631A,
+    800: #E75915,
+    900: #E2460C,
+    A100: #FFFFFF,
+    A200: #FFE2DA,
+    A400: #FFBBA7,
+    A700: #FFA78D,
+    contrast: (
+        50: $black-87-opacity,
+        100: $black-87-opacity,
+        200: $black-87-opacity,
+        300: $black-87-opacity,
+        400: $black-87-opacity,
+        500: white,
+        600: white,
+        700: white,
+        800: white,
+        900: white,
+        A100: $black-87-opacity,
+        A200: $black-87-opacity,
+        A400: $black-87-opacity,
+        A700: white,
+        // need to change contrast colors
+    )
+);
+
+$quiz-app-primary: mat-palette($mlblue);
+$quiz-app-accent: mat-palette($mlorange);
+$quiz-app-theme: mat-light-theme($quiz-app-primary, $quiz-app-accent);
+
+@include angular-material-theme($quiz-app-theme);
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600&display=swap');
+
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    margin: 0;
+}

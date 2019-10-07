@@ -1,0 +1,46 @@
+<div class="background full-page">
+  <mat-card class="matCard">
+    <mat-card-header class="center">
+      <mat-card-title class="fontSize">Users</mat-card-title>
+    </mat-card-header>
+    
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+    
+    <table class = "mat-elevation-z8" mat-table [dataSource]="dataSource" matSort>
+      
+      <!-- The let user is just a variable for the data pulled from the datasource (could be let anything.displayname and work) -->
+     
+      <ng-container matColumnDef="displayname">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Display Name </th>
+        <td mat-cell *matCellDef="let user"> {{user.displayname }}</td>
+      </ng-container>
+     
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+        <td mat-cell *matCellDef="let user"> {{user.email}} </td>
+      </ng-container>
+     
+     
+      <ng-container matColumnDef="editperm">
+        
+        <th mat-header-cell *matHeaderCellDef > Edit Permission </th>
+        <td mat-cell *matCellDef="let row" > 
+            
+          <select [(ngModel)]="row.permission" (change)="changePermission (row,$event.target.value)">
+            <option [value]="permission.viewValue" *ngFor="let permission of permissions" >
+              {{permission.viewValue}}
+              
+            </option>
+          </select>
+       
+        </td> 
+      
+      </ng-container> 
+     
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[10, 25, 50 ]" showFirstLastButtons></mat-paginator>
+  </mat-card>

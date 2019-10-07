@@ -1,0 +1,70 @@
+<div class="background full-page inline">
+
+  <div class="left">
+  <mat-card class="transparent">
+    <mat-card-title class="center"><b>Quiz Whip</b></mat-card-title>
+    <mat-card-content>
+      <p class="subtitle"><i>Create and manage quizes and tests</i></p>
+      <p class="subtitle"><i>Sort through results and view the date of quizes taken</i></p>
+      <p class="subtitle"><i>Easily share with students</i></p>
+      <p class="subtitle"><i>Manage scores and track progress</i></p>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="transparent">
+      <mat-card-title class="center"><b>Brain Train</b><img [routerLink]="['/learning/homepage']" class="arrow" src="./assets/images/arrow.png" width="50px"></mat-card-title>
+      <mat-card-content>
+          <p class="subtitle"><i>Share files and videos with classmates</i></p>
+          <p class="subtitle"><i>Comment on content and add your own notes</i></p>
+          <p class="subtitle"><i>Find learning content by topics</i></p>
+          <p class="subtitle"><i>Available exclusively for Midland University students</i></p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <img class="center-img" src="./assets/images/M.png">
+
+  <div class="right">
+      <mat-card class="right-card">
+          <mat-card-title class="center">Register</mat-card-title>
+          <form class="center form" autocomplete="off" fxLayout="column wrap" fxLayoutAlign="center center" fxLayoutGap="10px">
+
+            <mat-form-field>
+              <input matInput type="text" maxlength="60" required placeholder="First name" id="firstName" name="firstName"
+                [(ngModel)]="firstName">
+              <!-- <mat-hint>maximum of 60 characters</mat-hint> -->
+              <!-- <mat-error *ngIf="hasError('firstName', 'required')">First name is required</mat-error>
+            <mat-error *ngIf="hasError('firstName', 'maxlength')">You have more than 60 characters</mat-error> -->
+            </mat-form-field><br>
+      
+            <mat-form-field>
+              <input matInput type="text" maxlength="60" required placeholder="Last name" id="lastName" name="lastName"
+                [(ngModel)]="lastName">
+              <!-- <mat-hint>maximum of 60 characters</mat-hint> -->
+              <!-- <mat-error *ngIf="hasError('lastName', 'required')">Last name is required</mat-error>
+            <mat-error *ngIf="hasError('lastName', 'maxlength')">You have more than 60 characters</mat-error> -->
+            </mat-form-field><br>
+      
+            <mat-form-field>
+              <input matInput type="email" required placeholder="Email" id="email" name="email" [(ngModel)]="email">
+              <!-- <mat-hint>Must be a valid email address.</mat-hint> -->
+              <!-- <mat-error *ngIf="email.invalid">Please work</mat-error> -->
+      
+            </mat-form-field><br>
+      
+            <mat-form-field>
+              <input matInput type="password" minlength="8" maxlength="60" required placeholder="Password" id="password" name="password"
+                [(ngModel)]="password">
+              <mat-hint>At least 8 characters in length.</mat-hint>
+              <!-- <mat-error *ngIf="hasError('password', 'required')">Password is required</mat-error> -->
+            <!-- <mat-error *ngIf="hasError('password', 'minlength')">Password must be at least 8 characters in length.</mat-error> -->
+            </mat-form-field><br><br>
+      
+              <mat-card-actions align="center">
+                <button mat-raised-button color="primary" (click)="signup()">Submit</button>
+                <button [routerLink]="['/login']" type="button" mat-raised-button color="accent">Log In</button>
+              </mat-card-actions>
+          </form>
+        </mat-card>
+  </div>
+
+</div>

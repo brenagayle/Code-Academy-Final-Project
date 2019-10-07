@@ -1,0 +1,39 @@
+
+<ng-container *ngIf="items">
+<div class="container mt-3">
+    <div class="title h3 mt-4">{{items.title}}</div>
+
+    <div *ngIf="items.embed">
+      <!-- test embed -->
+      <iframe width="560" height="315" [src]="sanitizer.bypassSecurityTrustResourceUrl(items.embed)" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <a  class="btn btn-outline-success btn-lg mt-2 mb-2" *ngIf="items.files.length > 0" href="{{items.files[0].downloadURL}}" target="_blank">View
+        File</a>
+    <p class="description">{{items.description}}</p>
+
+</div>
+<!-- To Do: add optional embeded youtube if item contains a youtube video embed -->
+
+<div class="comments container center">
+    <div class="font-weight-bold">Comments</div>
+    <div *ngFor="let comment of comments">
+        <div class="font-weight-bold">{{comment.userName}}</div>
+        <div class="commentDisplay">{{comment.userInput}}</div>
+        <hr>
+    </div>
+</div>
+
+<div *ngIf="(user$ | async).permission === 'admin' || (user$ | async).permission === 'teacher' || (user$ | async).permission === 'user'" class="w-100 center">
+    <form class="addUserComment container center mt-3 mb-5">
+        <div class="inputField">
+            <input class="p-1" placeholder="Add a comment" [(ngModel)]="newComment.userInput" name="userInput">
+        </div>
+        <div class="inputField">
+            <input class="p-1 mt-1" placeholder="Your name" [(ngModel)]="newComment.userName" name="userName">
+        </div>
+        <button class="btn btn-outline-primary mt-3" color="primary" (click)="createComment()">Submit</button>
+    </form>
+</div>
+
+</ng-container>

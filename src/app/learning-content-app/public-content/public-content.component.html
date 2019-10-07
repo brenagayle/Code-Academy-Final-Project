@@ -1,0 +1,27 @@
+
+<!-- test accordion -->
+
+
+<!-- <a class="navLink" [routerLink]="[ '/details' ]" routerLinkActive="active">more</a> -->
+<div class="background">
+  <div class="welcomeContainer">
+  <h1 class="mat-h1 welcome">Welcome, Tech Warrior!</h1>
+  </div>
+  <br> 
+
+  <div class="list-group files-list">
+    <a *ngFor="let item of items" class="list-group-item list-group-item-action flex-column align-items-start row" [routerLink]="['/learning/details', item.payload.doc.id]">
+      <button mat-icon-button id="{{item.payload.newIndex}}"  type="button">
+          <img class="image" *ngIf="downloadURL" src="item.payload.doc.data().files[0].downloadURL">
+        <div class="col col-md-8 text-col">
+          <h5 class="mb-1">{{item.payload.doc.data().title}}</h5>
+          <small>{{item.payload.doc.data().description}}</small>
+        </div>
+        <div class="col col-md-2 actions-col">
+
+        </div>
+      </button>
+    </a>
+  </div>
+</div>
+

@@ -1,0 +1,36 @@
+.aboutSection{
+   
+    background-image: linear-gradient(#EE7623, #0e2340);
+    height: auto;
+    color: white;
+    min-height: 500px;
+}
+
+.shareIcon{
+    height: 150px;
+}
+
+.aboutContent{
+    max-width: 700px;
+}
+.slate{
+    text-align: center;
+    background-color: #0e2340;
+    color: white;
+    margin: 0px;
+    padding-bottom: 10px;
+}
+
+#slateTitle{
+    text-align: center;
+    font-size: 24px;
+    background-color: #0e2340;
+    color: white;
+    margin: 0px; 
+    padding-bottom: 10px;
+}
+@media screen and (max-width: 800px) {
+    .shareIcon {
+      display: none;
+    }
+  }
