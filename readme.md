@@ -1,28 +1,12 @@
-# QuizApp
+Quiz App Project aka Dual Learning Content:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
+This is the code for the final Midland University Group Project. The challenge was given to take two previous code projects, a quiz application and learning content blog, and turn them into one singe application. During this project the team worked using agile/scrum methodolgy with stand ups daily as well as meetings with the client to create an applicaiton worthy of dimployment. In the final project you are able to log in. If you are an admin or teacher you have the ability to create quizes and send codes to your students. If you are a student, you can enter the code to take quizes and all your scores will be stored. Any one, regardless of status, can post to the learning content portion of the application. 
 
-## Development server
+Languages, libraries, and frameworks used:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-# Code-Academy-Final-Project
+- HTML5 
+- CSS
+- JavaScript
+- Angular 6+
+- Angular Materials
+- Firebase 
